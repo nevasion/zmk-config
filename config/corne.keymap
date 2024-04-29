@@ -50,7 +50,7 @@
                                                         &none   &none   &none                   &none    &none     &none
                         >;
                 };
-                sym_layer {=~ ²
+                sym_layer {
                         bindings = <
                                 &kp EXCL &kp AT   &kp HASH &kp DLLR  &kp PRCNT &kp CARET        &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp MINUS &kp EQUAL
                                 &none    &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none            &none    &none    &none    &none    &none     &none
