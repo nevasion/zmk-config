@@ -15,7 +15,9 @@
   │ 12  13  14  15  16  17 │ 18  19  20  21  22  23 │ │ LM5 LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 RM5 │
   │ 24  25  26  27  28  29 │ 30  31  32  33  34  35 │ │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
   ╰───────────╮ 36  37  38 │ 39  40  41 ╭───────────╯ ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
-              ╰────────────┴────────────╯                         ╰─────────────┴─────────────╯             */
+              ╰────────────┴────────────╯                         ╰─────────────┴─────────────╯
+
+*/
 
 #define LT0  5  // left-top row
 #define LT1  4
@@ -72,75 +74,75 @@
 #define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2
 
 / {
-        behaviors {
-                bspc_del: backspace_delete {
-                        compatible = "zmk,behavior-mod-morph";
-                        #binding-cells = <0>;
-                        bindings = <&kp BACKSPACE>, <&kp DELETE>;
-                        mods = <(MOD_LSFT|MOD_RSFT)>;
-                };
-                hml: homerow_mods_left {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        bindings = <&kp>, <&kp>;
-
-                        flavor = "balanced";
-                        tapping-term-ms = <500>;
-                        quick-tap-ms = <175>;                // repeat on tap-into-hold
-                        require-prior-idle-ms = <150>;
-
-                        hold-trigger-key-positions = <KEYS_R KEYS_T>;
-                        hold-trigger-on-release;
-                };
-                hmr: homerow_mods_right {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        bindings = <&kp>, <&kp>;
-
-                        flavor = "balanced";
-                        tapping-term-ms = <500>;
-                        quick-tap-ms = <175>;
-                        require-prior-idle-ms = <150>;
-
-                        hold-trigger-key-positions = <KEYS_L KEYS_T>;
-                        hold-trigger-on-release;
-                };
+    behaviors {
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        hml: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
 
-        keymap {
-                compatible = "zmk,keymap";
+            flavor = "balanced";
+            tapping-term-ms = <500>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
 
-                default_layer {
-                        bindings = <
-                                &none &kp Q       &kp W       &kp E        &kp R        &kp T                       &kp Y    &kp U        &kp I        &kp O       &kp P          &bspc_del
-                                &none &hml LGUI A &hml LALT S &hml LCTRL D &hml LSHFT F &kp G                       &kp H    &hmr LSHFT J &hmr LCTRL K &hmr LALT L &hmr LGUI SEMI &kp SQT
-                                &none &kp Z       &kp X       &kp C        &kp V        &kp B                       &kp N    &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp BSLH
-                                                              &kp ESC      &lt 2 TAB    &none                       &kp RET  &lt 1 SPACE  &mo 3
-                        >;
-                };
-                nav_layer {
-                        bindings = <
-                                &none &none    &none    &none     &none     &none               &none    &kp PG_UP &kp UP   &kp PG_DN &none &bspc_del
-                                &none &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none               &kp HOME &kp LEFT  &kp DOWN &kp RIGHT &none &none
-                                &none &none    &none    &none     &none     &none               &kp END  &none     &none    &none     &none &none
-                                                        &none     &kp TAB   &none               &none    &none     &none
-                        >;
-                };
-                num_layer {
-                        bindings = <
-                                &kp GRAVE &kp N1 &kp N2 &kp N3  &kp F4  &kp N5                  &kp N6   &kp N7    &kp N8    &kp N9   &kp N0   &bspc_del
-                                &kp F1    &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                  &none    &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &none
-                                &kp F7    &kp F8 &kp F9 &kp F10 &kp F11 &kp F12                 &none    &none     &kp COMMA &kp DOT  &none    &none
-                                                        &none   &none   &none                   &none    &none     &none
-                        >;
-                };
-                sym_layer {
-                        bindings = <
-                                &kp EXCL &kp AT   &kp HASH &kp DLLR  &kp PRCNT &kp CARET        &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp MINUS &kp EQUAL
-                                &none    &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none            &none    &none    &none    &none    &none     &none
-                                &none    &none    &none    &none      &none    &none            &none    &none    &none    &none    &none     &none
-                                                           &none      &none    &none            &none    &none    &none
-                        >;
-                };
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
         };
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <500>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &none     &kp Q       &kp W       &kp E        &kp R        &kp T                       &kp Y    &kp U        &kp I        &kp O       &kp P          &bspc_del
+                &kp LSHFT &hml LGUI A &hml LALT S &hml LCTRL D &hml LSHFT F &kp G                       &kp H    &hmr LSHFT J &hmr LCTRL K &hmr LALT L &hmr LGUI SEMI &kp SQT
+                &kp LCTRL &kp Z       &kp X       &kp C        &kp V        &kp B                       &kp N    &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp BSLH
+                                                  &kp ESC      &lt 2 TAB    &none                       &kp RET  &lt 1 SPACE  &mo 3
+            >;
+        };
+        nav_layer {
+            bindings = <
+                &none &none    &none    &none     &none     &none               &none    &kp PG_UP &kp UP   &kp PG_DN &none &bspc_del
+                &none &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none               &kp HOME &kp LEFT  &kp DOWN &kp RIGHT &none &none
+                &none &none    &none    &none     &none     &none               &kp END  &none     &none    &none     &none &none
+                                        &none     &kp TAB   &none               &none    &none     &none
+            >;
+        };
+        num_layer {
+            bindings = <
+                &kp GRAVE &kp N1 &kp N2 &kp N3  &kp F4  &kp N5                  &kp N6   &kp N7    &kp N8    &kp N9   &kp N0   &bspc_del
+                &kp F1    &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                  &none    &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &none
+                &kp F7    &kp F8 &kp F9 &kp F10 &kp F11 &kp F12                 &none    &none     &kp COMMA &kp DOT  &none    &none
+                                        &none   &none   &none                   &none    &none     &none
+            >;
+        };
+        sym_layer {
+            bindings = <
+                &kp EXCL &kp AT   &kp HASH &kp DLLR  &kp PRCNT &kp CARET        &kp AMPS &kp STAR  &kp LPAR  &kp RPAR &kp MINUS &kp EQUAL
+                &none    &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none            &none    &kp LSHFT &kp LCTRL &kp LALT &kp LGUI  &none
+                &none    &none    &none    &none      &none    &none            &none    &none     &kp LBKT  &kp RBKT &none     &none
+                                           &none      &none    &none            &none    &none     &none
+            >;
+        };
+    };
 };
