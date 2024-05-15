@@ -16,13 +16,13 @@
 #define XXX &none
 
 /* Layers ids */
-#define DEF     0 // Default (QWERTY)
-#define NAV     1 // Navigation
-#define NUM     2 // Numbers & functions
-#define SYM     3 // Symbols
-#define ER_AL   4 // Ergo-L alpha
-#define ER_AC   5 // Ergo-L accent
-#define ER_SM   6 // Ergo-L symbols
+#define DEF 0   // Default (QWERTY)
+#define NAV 1   // Navigation
+#define NUM 2   // Numbers & functions
+#define SYM 3   // Symbols
+#define ER_AL 4 // Ergo-L alpha
+#define ER_AC 5 // Ergo-L accent
+#define ER_SM 6 // Ergo-L symbols
 
 /* sticky-key config */
 &sk {
@@ -122,11 +122,12 @@ ZMK_LAYER(num_layer,
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6            XXX           &kp LSHFT     &kp LCTRL     &kp LALT      &kp LGUI      XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12           XXX           XXX           &kp COMMA     &kp DOT       &none         &none
+          &kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12           XXX           XXX           &kp COMMA     &kp DOT       XXX           XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                     ___           XXX           ___               ___           ___           &kp K_CALC
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
+/*
 ZMK_LAYER(sym_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT     &kp CARET         &kp AMPS      &kp STAR      &kp LP        &kp RPAR      &kp MINUS     &kp EQUAL
@@ -171,3 +172,4 @@ ZMK_LAYER(ergoL_sym_layer,
                                                     &kp SPACE     &kp TAB       &smrtshft         &kp RET       &SAPOS ER_AL  XXX
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
+*/
