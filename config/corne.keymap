@@ -12,9 +12,8 @@
 #define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2
 
 /* Keys shortcuts */
-#define SPC SPACE
-define ___ &trans
-define XXX &none
+#define ___ &trans
+#define XXX &none
 
 /* Layers ids */
 #define DEF     0 // Default (QWERTY)
