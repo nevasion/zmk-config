@@ -19,5 +19,5 @@ ZMK_UNICODE_PAIR(fr_y_di,      N0, N0, F, F,    N0, N1, N7, N8) // ÿ/Ÿ
 /* French symbols */
 ZMK_UNICODE_PAIR(fr_gra_dia,   N0, N0, A,  N8,  N0, N0, N6, N0) // `/¨
 
-
+ZMK_UNICODE_SINGLE(mu,         N0, N3, B, C) // µ
 
