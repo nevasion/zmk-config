@@ -14,6 +14,8 @@
 /* Keys shortcuts */
 #define ___ &trans
 #define XXX &none
+#define ACC_GR RA(LBKT) // `
+#define ACC_TR LS(LBKT) // ¨
 
 /* Layers ids */
 #define DEF 0   // Default (QWERTY)
@@ -29,32 +31,6 @@
     release-after-ms = <900>;  // release after 0.9s
     quick-release;             // no double capitalization when rolling keys
 };
-
-/* mod-morph */
-ZMK_BEHAVIOR(bspc_del, mod_morph, // tap: backspace | shift+tap: delete
-    bindings = <&kp BACKSPACE>, <&kp DELETE>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-ZMK_BEHAVIOR(comma_semi, mod_morph, // tap: comma | shift+tap: semi-colon
-    bindings = <&kp COMMA>, <&kp SEMI>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-ZMK_BEHAVIOR(minus_qmark, mod_morph, // tap: minus | shift+tap: question mark
-    bindings = <&kp MINUS>, <&kp QMARK>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-ZMK_BEHAVIOR(dot_colon, mod_morph, // tap: dot | shift+tap: colon
-    bindings = <&kp DOT>, <&kp COLON>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-ZMK_BEHAVIOR(smrtshft, mod_morph, // tap: sticky-shift | shift+tap / double-tap: caps-word | hold: shift
-    bindings = <&sk LSHIFT>, <&caps_word>;
-    mods = <(MOD_LSFT)>;
-)
-ZMK_BEHAVIOR(trem_gr, mod_morph, // tap: trema | shift+tap: grave
-    bindings = <&KPD ACC_TR ERG>, <&KPD ACC_GR ERG>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
 
 /* tap-dance */
 ZMK_BEHAVIOR(td_sp, tap_dance,
@@ -96,12 +72,44 @@ ZMK_BEHAVIOR(AE_L, macro_one_param, bindings = <&fr_ae>, <&macro_param_1to1>, <&
 ZMK_BEHAVIOR(OE_L, macro_one_param, bindings = <&fr_oe>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)          // Œ
 ZMK_BEHAVIOR(CEDIL, macro_one_param, bindings = <&kp RBKT>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)       // Ç
 ZMK_BEHAVIOR(SAPOS, macro_one_param, bindings = <&kp APOS>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)       // '
+ZMK_BEHAVIOR(KPD, macro_two_param, bindings =
+    <&macro_param_1to1>,
+    <&kp MACRO_PLACEHOLDER>,
+    <&macro_param_2to1>,
+    <&to MACRO_PLACEHOLDER>;
+)
 ZMK_BEHAVIOR(TREM, macro_two_param, bindings = // ¨ to input
     <&kp LS(LBKT)>,
     <&macro_param_1to1>,
     <&macro_tap &kp MACRO_PLACEHOLDER>,
     <&macro_param_2to1>,
     <&to MACRO_PLACEHOLDER>;
+)
+
+ /* mod-morph */
+ZMK_BEHAVIOR(bspc_del, mod_morph, // tap: backspace | shift+tap: delete
+    bindings = <&kp BACKSPACE>, <&kp DELETE>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+ZMK_BEHAVIOR(comma_semi, mod_morph, // tap: comma | shift+tap: semi-colon
+    bindings = <&kp COMMA>, <&kp SEMI>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+ZMK_BEHAVIOR(minus_qmark, mod_morph, // tap: minus | shift+tap: question mark
+    bindings = <&kp MINUS>, <&kp QMARK>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+ZMK_BEHAVIOR(dot_colon, mod_morph, // tap: dot | shift+tap: colon
+    bindings = <&kp DOT>, <&kp COLON>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+ZMK_BEHAVIOR(smrtshft, mod_morph, // tap: sticky-shift | shift+tap / double-tap: caps-word | hold: shift
+    bindings = <&sk LSHIFT>, <&caps_word>;
+    mods = <(MOD_LSFT)>;
+)
+ZMK_BEHAVIOR(trem_gr, mod_morph, // tap: trema | shift+tap: grave
+    bindings = <&KPD ACC_TR ER_AL>, <&KPD ACC_GR ER_AL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 /* layers */
