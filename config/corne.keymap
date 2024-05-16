@@ -4,6 +4,7 @@
 #include "../zmk-helpers/helper.h"
 #include "../zmk-helpers/keypos_def/keypos_42keys.h"
 #include "../zmk-helpers/international_chars/french.dtsi"
+#include "../zmk-helpers/international_chars/greek.dtsi"
 #include "../zmk-helpers/international_chars/currency.dtsi"
 
 /* Homerow mods */
@@ -72,7 +73,7 @@ ZMK_BEHAVIOR(AE_L, macro_one_param, bindings = <&fr_ae>, <&macro_param_1to1>, <&
 ZMK_BEHAVIOR(OE_L, macro_one_param, bindings = <&fr_oe>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)          // Œ
 ZMK_BEHAVIOR(CEDIL, macro_one_param, bindings = <&fr_c_cd>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)       // Ç
 ZMK_BEHAVIOR(SAPOS, macro_one_param, bindings = <&kp APOS>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)       // '
-ZMK_BEHAVIOR(MU, macro_one_param, bindings = <&mu>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)       // '
+ZMK_BEHAVIOR(MU, macro_one_param, bindings = <&el_mu>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)       // '
 ZMK_BEHAVIOR(KPD, macro_two_param, bindings =
     <&macro_param_1to1>,
     <&kp MACRO_PLACEHOLDER>,
