@@ -149,7 +149,6 @@ ZMK_LAYER(ergoL_layer,
                                                     &kp SPACE     &kp TAB       &smrtshft         &kp RET       &td_sp        &mo ER_SM
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
-/*
 ZMK_LAYER(ergoL_accent_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp ESC       &AE_L ER_AL   &CEDIL ER_AL  &OE_L ER_AL   &O_CI ER_AL   XXX               XXX           XXX           XXX           &trem_gr      XXX           &bspc_del
@@ -161,7 +160,7 @@ ZMK_LAYER(ergoL_accent_layer,
                                                     &kp SPACE     &kp TAB       &smrtshft         &kp RET       &SAPOS ER_AL  XXX
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
-
+/*
 ZMK_LAYER(ergoL_sym_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp ESC       &kp AT        &kp LT        &kp GT        &kp DOLLAR    &kp PERCENT       &kp CARET     &kp AMPS      &kp STAR      &kp APOS      &kp GRAVE     &bspc_del
