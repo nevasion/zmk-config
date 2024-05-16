@@ -51,6 +51,10 @@ ZMK_BEHAVIOR(smrtshft, mod_morph, // tap: sticky-shift | shift+tap / double-tap:
     bindings = <&sk LSHIFT>, <&caps_word>;
     mods = <(MOD_LSFT)>;
 )
+ZMK_BEHAVIOR(trem_gr, mod_morph, // tap: trema | shift+tap: grave
+    bindings = <&KPD ACC_TR ERG>, <&KPD ACC_GR ERG>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
 
 /* tap-dance */
 ZMK_BEHAVIOR(td_sp, tap_dance,
