@@ -73,7 +73,7 @@ ZMK_BEHAVIOR(AE_L, macro_one_param, bindings = <&fr_ae>, <&macro_param_1to1>, <&
 ZMK_BEHAVIOR(OE_L, macro_one_param, bindings = <&fr_oe>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)          // Œ
 ZMK_BEHAVIOR(CEDIL, macro_one_param, bindings = <&fr_c_cd>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)       // Ç
 ZMK_BEHAVIOR(SAPOS, macro_one_param, bindings = <&kp APOS>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)       // '
-ZMK_BEHAVIOR(U_MU, macro_one_param, bindings = <&el_mu>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)       // '
+ZMK_BEHAVIOR(U_MU, macro_one_param, bindings = <&el_mu>, <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>;)          // '
 ZMK_BEHAVIOR(KPD, macro_two_param, bindings =
     <&macro_param_1to1>,
     <&kp MACRO_PLACEHOLDER>,
@@ -114,12 +114,20 @@ ZMK_BEHAVIOR(trem_gr, mod_morph, // tap: trema | shift+tap: grave
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
+/* combos */
+ZMK_COMBO(left_parenthesis,   &kp LPAR,      LT0 LM0, DEF)
+ZMK_COMBO(right_parenthesis,  &kp RPAR,      LT5 LM5, DEF)
+ZMK_COMBO(left_bracket,       &kp LBKT,      LM0 LB0, DEF)
+ZMK_COMBO(right_bracket,      &kp RBKT,      RM0 RB0, DEF)
+ZMK_COMBO(underscore,         &kp UNDER,     LB2 LB1, DEF)
+ZMK_COMBO(equal,              &kp KP_EQUAL,  RB2 RB1, DEF)
+
 /* layers */
 ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp ESC       &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &bspc_del
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &to ER_AL     &hrl LGUI A   &hrl LALT S   &hrl LCTRL D  &hrl LSHFT F  &kp G             &kp H         &hrr RSHFT J  &hrr LCTRL K  &hrr LALT L   &hrr LGUI SEMI &kp SQT
+          &to ER_AL     &hrl LGUI A   &hrl LALT S   &hrl LCTRL D  &hrl LSHFT F  &kp G             &kp H         &hrr LSHFT J  &hrr LCTRL K  &hrr LALT L   &hrr LGUI SEMI &kp SQT
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp LCTRL     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH       &kp BSLH
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -161,11 +169,11 @@ ZMK_LAYER(sym_layer,
 )
 ZMK_LAYER(ergoL_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp ESC       &kp Q         &kp C         &kp O         &kp P         &kp W             &kp J         &kp M         &kp D         &to ER_AC     &kp F         &bspc_del
+          &kp ESC       &kp Q         &kp C         &kp O         &kp P         &kp W             &kp J         &kp M         &kp D         &to ER_AC     &kp Y         &bspc_del
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &to DEF       &hrl LGUI A   &hrl LALT S   &hrl LCTRL E  &hrl LSHFT N  &comma_semi       &kp L         &hrr LSHFT R  &hrr LCTRL T  &hrr LALT I   &hrr LGUI U   &kp SQT
+          &to DEF       &hrl LGUI A   &hrl LALT S   &hrl LCTRL E  &hrl LSHFT N  &kp F             &kp L         &hrr LSHFT R  &hrr LCTRL T  &hrr LALT I   &hrr LGUI U   &kp SQT
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &kp LCTRL     &kp Z         &kp X         &minus_qmark  &kp V         &kp B             &dot_colon    &kp H         &kp G         &kp Y         &kp K         &kp BSLH
+          &kp LCTRL     &kp Z         &kp X         &minus_qmark  &kp V         &kp B             &dot_colon    &kp H         &kp G         &comma_semi   &kp K         &kp BSLH
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                                     &kp SPACE     &kp TAB       &smrtshft         &kp RET       &td_sp        &mo ER_SM
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
@@ -183,7 +191,7 @@ ZMK_LAYER(ergoL_accent_layer,
 )
 ZMK_LAYER(ergoL_sym_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp ESC       &kp AT        &kp LT        &kp GT        &kp DOLLAR    &kp PERCENT       &kp CARET     &kp AMPS      &kp STAR      &kp APOS      &kp GRAVE     &bspc_del
+          &kp ESC       &kp CARET     &kp LT        &kp GT        &kp DOLLAR    &kp PERCENT       &kp AT        &kp AMPS      &kp STAR      &kp APOS      &kp GRAVE     &bspc_del
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           XXX           &kp LBRC      &kp LPAR      &kp RPAR      &kp RBRC      &kp KP_EQUAL      &kp BSLH      &kp PLUS      &kp MINUS     &kp FSLH      &kp DQT       XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
