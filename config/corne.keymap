@@ -116,11 +116,11 @@ ZMK_BEHAVIOR(trem_gr, mod_morph, // tap: trema | shift+tap: grave
 
 /* combos */
 ZMK_COMBO(left_parenthesis,   &kp LPAR,      LT0 LM0, DEF)
-ZMK_COMBO(right_parenthesis,  &kp RPAR,      LT5 LM5, DEF)
+ZMK_COMBO(right_parenthesis,  &kp RPAR,      RT0 RM0, DEF)
 ZMK_COMBO(left_bracket,       &kp LBKT,      LM0 LB0, DEF)
 ZMK_COMBO(right_bracket,      &kp RBKT,      RM0 RB0, DEF)
 ZMK_COMBO(underscore,         &kp UNDER,     LB2 LB1, DEF)
-ZMK_COMBO(equal,              &kp KP_EQUAL,  RB2 RB1, DEF)
+ZMK_COMBO(equal,              &kp EQUAL,     RB2 RB1, DEF)
 
 /* layers */
 ZMK_LAYER(default_layer,
