@@ -15,6 +15,7 @@
 /* Keys shortcuts */
 #define ___ &trans
 #define XXX &none
+#define SPC SPACE
 #define ACC_GR RA(LBKT) // `
 #define ACC_TR LS(LBKT) // ¨
 
@@ -32,6 +33,10 @@
     release-after-ms = <900>;  // release after 0.9s
     quick-release;             // no double capitalization when rolling keys
 };
+
+// &lt {
+//      tapping-term-ms = <200>
+// };
 
 /* tap-dance */
 ZMK_BEHAVIOR(td_sp, tap_dance,
@@ -121,6 +126,7 @@ ZMK_COMBO(left_bracket,       &kp LBKT,      LM0 LB0, DEF)
 ZMK_COMBO(right_bracket,      &kp RBKT,      RM0 RB0, DEF)
 ZMK_COMBO(underscore,         &kp UNDER,     LB2 LB1, DEF)
 ZMK_COMBO(equal,              &kp EQUAL,     RB2 RB1, DEF)
+ZMK_COMBO(tilde,              &kp TILDE,     LT2 LT1, DEF)
 
 /* layers */
 ZMK_LAYER(default_layer,
@@ -131,7 +137,7 @@ ZMK_LAYER(default_layer,
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp LCTRL     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH       &kp BSLH
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                    &kp SPACE     &lt NUM TAB   &smrtshft         &kp RET       &td_sp        &mo SYM
+                                                    &kp SPACE     &lt NUM TAB   &smrtshft         &kp RET       &lt NAV SPC   &mo SYM
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 ZMK_LAYER(nav_layer,
@@ -175,7 +181,7 @@ ZMK_LAYER(ergoL_layer,
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp LCTRL     &kp Z         &kp X         &minus_qmark  &kp V         &kp B             &dot_colon    &kp H         &kp G         &comma_semi   &kp K         &kp BSLH
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                                    &kp SPACE     &kp TAB       &smrtshft         &kp RET       &td_sp        &mo ER_SM
+                                                    &kp SPACE     &kp TAB       &smrtshft         &kp RET       &lt NAV SPC   &mo ER_SM
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 ZMK_LAYER(ergoL_accent_layer,
