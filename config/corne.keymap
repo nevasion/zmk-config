@@ -1,11 +1,11 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#include "zmk-helpers/helper.h"
-#include "zmk-helpers/keypos_def/keypos_42keys.h"
-#include "zmk-helpers/international_chars/french.dtsi"
-#include "zmk-helpers/international_chars/greek.dtsi"
-#include "zmk-helpers/international_chars/currency.dtsi"
+#include "./zmk-helpers/helper.h"
+#include "./zmk-helpers/keypos_def/keypos_42keys.h"
+#include "./zmk-helpers/international_chars/french.dtsi"
+#include "./zmk-helpers/international_chars/greek.dtsi"
+#include "./zmk-helpers/international_chars/currency.dtsi"
 
 /* Homerow mods */
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
