@@ -16,15 +16,17 @@
 #     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
 #     artifact-name: corne_left_with_logging
 #
----
-include:
-  - board: nice_nano_v2
-    shield: corne_left
-  - board: nice_nano_v2
-    shield: corne_right
-  - board: nice_nano_v2
-    shield: corne_nevasion_left
-  - board: nice_nano_v2
-    shield: corne_nevasion_right
-  - board: nice_nano_v2
-    shield: settings_reset
+# ---
+# include:
+#   - board: nice_nano_v2
+#     shield: corne_left
+#   - board: nice_nano_v2
+#     shield: corne_right
+#   - board: nice_nano_v2
+#     shield: corne_nevasion_left
+#   - board: nice_nano_v2
+#     shield: corne_nevasion_right
+#   - board: nice_nano_v2
+#     shield: settings_reset
+board: [ "nice_nano_v2" ]
+shield: [ "corne_left", "corne_right", "corne_nevasion_left", "corne_nevasion_right", "settings_reset" ]
