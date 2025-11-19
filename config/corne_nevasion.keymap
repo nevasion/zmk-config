@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/keypos_def/keypos_42keys.h"
@@ -172,7 +173,7 @@ ZMK_LAYER(ergoL_nav_layer,
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           XXX           XXX           XXX           XXX           XXX           XXX               &kp END       &kp BSPC      &kp DEL       XXX           &kp C_VOL_DN  XXX
      // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                    XXX           &kp TAB       ___               ___           XXX           XXX
+                                                    &bt BT_CLR    &kp TAB       ___               ___           XXX           XXX
      //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 ZMK_LAYER(ergoL_num_layer,
